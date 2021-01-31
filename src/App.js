@@ -136,10 +136,7 @@ class App extends Component {
           const { products } = await branch.json();
           this.setState(({ branches }) => {
             return {
-              branches: this.formatBranchData(
-                branches.concat([...products]),
-                ""
-              ),
+              branches: this.formatBranchData(branches.concat([...products])),
               filteredBranches: this.formatBranchData(
                 branches.concat([...products])
               ),
@@ -199,7 +196,6 @@ class App extends Component {
 
   render() {
     const {
-      formatBranchData,
       getTotal,
       handleSearchChange,
       state: { search, isLoading, filteredBranches },
